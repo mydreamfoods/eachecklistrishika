@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Checklist — My Dream Foods</title>
+<title>EA Daily Checklist — Rishika · My Dream Foods</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -96,6 +96,25 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .panel-head-left{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text)}
 .count-badge{font-size:11px;background:var(--accent-lt);color:var(--accent);padding:2px 8px;border-radius:20px;font-family:var(--mono);font-weight:600}
 
+/* DATE / MONTH FILTER BAR */
+.fbar{background:var(--surface);border-radius:var(--rl);padding:.9rem 1.25rem;margin-bottom:1.25rem;box-shadow:var(--sh);display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px}
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.flabel{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600;display:flex;align-items:center;gap:5px}
+.finput{font-family:var(--font);font-size:13px;padding:7px 10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--surface2);color:var(--text);min-width:170px;outline:none;transition:border-color .15s}
+.finput:focus{border-color:var(--accent);background:#fff}
+.fbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:7px 12px;border-radius:var(--r);border:1px solid var(--border2);background:var(--surface);color:var(--accent);cursor:pointer;font-family:var(--font);font-weight:600;transition:all .15s}
+.fbtn:hover{background:var(--accent-lt)}
+.dchips{width:100%;display:flex;flex-wrap:wrap;gap:6px;padding-top:10px;border-top:1px dashed var(--border2)}
+.dchips-lbl{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;align-self:center;margin-right:4px}
+.dchip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-family:var(--mono);padding:4px 10px;border-radius:20px;border:1px solid var(--border2);background:var(--surface2);color:var(--text);cursor:pointer;transition:all .15s;user-select:none}
+.dchip:hover{border-color:var(--accent);color:var(--accent)}
+.dchip .cnt{font-size:10px;background:var(--surface3);color:var(--muted);padding:1px 6px;border-radius:10px}
+.dchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.dchip.on .cnt{background:rgba(255,255,255,0.25);color:#fff}
+.dchip.extra{border-style:dashed}
+.fsummary{margin-left:auto;font-size:12px;color:var(--muted);font-family:var(--mono);align-self:center}
+@media(max-width:620px){.fsummary{margin-left:0;width:100%}}
+
 /* FILTERS */
 .filters{display:flex;gap:6px}
 .filter-btn{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);background:var(--surface);color:var(--muted);cursor:pointer;font-family:var(--font);font-weight:500;transition:all .15s}
@@ -111,8 +130,8 @@ tr.data-row:hover td{background:var(--surface2)}
 tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease both}
 @keyframes fadeIn{from{opacity:0;-webkit-transform:translateY(5px);transform:translateY(5px)}to{opacity:1;-webkit-transform:none;transform:none}}
 .id-cell{font-family:var(--mono);font-size:11px;color:var(--accent);background:var(--accent-lt);padding:3px 8px;border-radius:6px;display:inline-block;font-weight:600}
-.task-name{font-weight:500;color:var(--text)}
-.date-cell{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--surface3);padding:3px 8px;border-radius:6px;display:inline-block}
+.task-name{font-weight:500;color:var(--text);white-space:pre-line}
+.date-cell{white-space:nowrap;font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--surface3);padding:3px 8px;border-radius:6px;display:inline-block}
 
 /* BADGES */
 .badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;white-space:nowrap}
@@ -141,6 +160,59 @@ tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease bot
   .date-pill{display:none}
   td,th{padding:10px 12px}
 }
+/* ===== Rishika ADDITIONS ===== */
+.btn.solid{background:#fff;color:var(--accent);border-color:#fff;font-weight:600}
+.btn.solid:hover{background:#eef2ff}
+.card.red .card-top-bar{background:linear-gradient(90deg,#dc2626,#f87171)}
+.card.red .card-icon{background:var(--red-bg);color:var(--red)}
+.card.red .cval{color:var(--red)}
+.search{min-width:220px}
+.fu-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:6px 11px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;font-family:var(--font);font-weight:600;white-space:nowrap;transition:all .15s}
+.fu-btn:hover{background:#4338ca}
+.fu-btn.due{background:var(--red);border-color:var(--red)}
+.done-txt{font-size:11px;color:var(--green-txt);font-family:var(--mono)}
+.sub{font-size:11px;color:var(--muted);margin-top:4px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;font-family:var(--mono)}
+.tag.od{background:var(--red-bg);color:var(--red)}
+.tag.td{background:var(--amber-bg);color:var(--amber-txt)}
+.tag.fu{background:var(--surface3);color:var(--muted)}
+.date-cell.od{background:var(--red-bg);color:var(--red);font-weight:600}
+.date-cell.td{background:var(--amber-bg);color:var(--amber-txt);font-weight:600}
+tr.row-od td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+tr.row-td td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:100;padding:1rem}
+.ov.show{display:flex}
+.modal{background:#fff;border-radius:var(--rl);width:100%;max-width:480px;box-shadow:0 20px 60px rgba(15,23,42,.3);overflow:hidden;animation:fadeIn .2s ease}
+.m-head{padding:14px 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;display:flex;justify-content:space-between;align-items:center}
+.m-title{font-size:15px;font-weight:700;display:flex;gap:8px;align-items:center}
+.m-x{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
+.m-body{padding:18px;display:flex;flex-direction:column;gap:14px;max-height:70vh;overflow-y:auto}
+.m-foot{padding:12px 18px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px;background:var(--surface2)}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld .finput{width:100%;min-width:0}
+textarea.finput{resize:vertical;min-height:70px;font-family:var(--font)}
+.req{color:var(--red)}
+.task-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;font-size:13px;white-space:pre-line}
+.task-box .meta{font-size:11px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{border:2px solid var(--border2);border-radius:var(--r);padding:12px;text-align:center;cursor:pointer;font-weight:600;font-size:13px;transition:all .15s;user-select:none}
+.opt i{display:block;font-size:22px;margin-bottom:4px}
+.opt.yes.on{border-color:var(--green);background:var(--green-bg);color:var(--green-txt)}
+.opt.no.on{border-color:var(--amber);background:var(--amber-bg);color:var(--amber-txt)}
+.quick{display:flex;gap:6px;flex-wrap:wrap}
+.qbtn{font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid var(--border2);background:#fff;color:var(--accent);cursor:pointer;font-family:var(--font);font-weight:600}
+.qbtn:hover{background:var(--accent-lt)}
+.btn-p{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:8px 16px;border-radius:var(--r);border:none;background:var(--accent);color:#fff;cursor:pointer;font-family:var(--font);font-weight:600}
+.btn-p:disabled{opacity:.6;cursor:wait}
+.btn-g{font-size:13px;padding:8px 14px;border-radius:var(--r);border:1px solid var(--border2);background:#fff;color:var(--muted);cursor:pointer;font-family:var(--font);font-weight:500}
+.m-err{font-size:12px;color:var(--red);background:var(--red-bg);padding:8px 10px;border-radius:8px;display:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#1e1b4b;color:#fff;padding:10px 18px;border-radius:30px;font-size:13px;font-weight:500;opacity:0;transition:all .3s;z-index:200;display:flex;gap:8px;align-items:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:620px){
+  .hide-sm{display:none}
+  td,th{padding:10px 10px}
+}
 </style>
 </head>
 <body>
@@ -156,8 +228,21 @@ tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease bot
     </div>
     <div class="topbar-right">
       <div class="date-pill" id="today"></div>
-      <button class="btn" id="refresh-btn" onclick="loadData()"><i class="ti ti-refresh"></i>Refresh</button>
+      <button class="btn solid" onclick="openAdd()"><i class="ti ti-plus"></i>Add Task</button>
+      <button class="btn" id="refresh-btn" onclick="loadData()"><i class="ti ti-refresh"></i><span class="hide-sm">Refresh</span></button>
     </div>
+  </div>
+
+  <div id="fbar" class="fbar" style="display:none">
+    <div class="fgroup">
+      <label class="flabel" for="month-sel"><i class="ti ti-calendar-month"></i>Month</label>
+      <select class="finput" id="month-sel" onchange="refreshView()"></select>
+    </div>
+    <div class="fgroup">
+      <label class="flabel" for="q"><i class="ti ti-search"></i>Search</label>
+      <input class="finput search" id="q" placeholder="Task, ID or feedback…" oninput="refreshView()">
+    </div>
+    <div class="fsummary" id="fsummary"></div>
   </div>
 
   <div id="cards" class="cards" style="display:none">
@@ -166,28 +251,28 @@ tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease bot
       <div class="card-icon"><i class="ti ti-layout-list"></i></div>
       <div class="clabel">Total Tasks</div>
       <div class="cval" id="c-total">0</div>
-      <div class="ctag">all tasks</div>
+      <div class="ctag">in selected month</div>
     </div>
     <div class="card green">
       <div class="card-top-bar"></div>
       <div class="card-icon"><i class="ti ti-circle-check"></i></div>
       <div class="clabel">Completed</div>
       <div class="cval" id="c-done">0</div>
-      <div class="ctag">done today</div>
+      <div class="ctag">marked done</div>
     </div>
     <div class="card amber">
       <div class="card-top-bar"></div>
       <div class="card-icon"><i class="ti ti-clock-hour-4"></i></div>
       <div class="clabel">Pending</div>
       <div class="cval" id="c-pend">0</div>
-      <div class="ctag">remaining</div>
+      <div class="ctag">open tasks</div>
     </div>
-    <div class="card blue">
+    <div class="card red" style="cursor:pointer" onclick="applyFilter('due',document.querySelector('[data-f=due]'))">
       <div class="card-top-bar"></div>
-      <div class="card-icon"><i class="ti ti-chart-pie"></i></div>
-      <div class="clabel">Completion</div>
-      <div class="cval" id="c-pct">0%</div>
-      <div class="ctag">of total</div>
+      <div class="card-icon"><i class="ti ti-bell-ringing"></i></div>
+      <div class="clabel">Follow-up Due</div>
+      <div class="cval" id="c-due">0</div>
+      <div class="ctag" id="c-due-tag">today + overdue</div>
     </div>
   </div>
 
@@ -208,9 +293,10 @@ tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease bot
         <span class="count-badge" id="task-count">—</span>
       </div>
       <div class="filters" id="filters" style="display:none">
-        <button class="filter-btn active" onclick="applyFilter('all',this)">All</button>
-        <button class="filter-btn" onclick="applyFilter('yes',this)">Done</button>
-        <button class="filter-btn" onclick="applyFilter('no',this)">Pending</button>
+        <button class="filter-btn active" data-f="all" onclick="applyFilter('all',this)">All</button>
+        <button class="filter-btn" data-f="due" onclick="applyFilter('due',this)">Follow-up Due</button>
+        <button class="filter-btn" data-f="no" onclick="applyFilter('no',this)">Pending</button>
+        <button class="filter-btn" data-f="yes" onclick="applyFilter('yes',this)">Done</button>
       </div>
     </div>
     <div id="content"><div class="state"><div class="loader"><span></span><span></span><span></span></div></div></div>
@@ -218,180 +304,328 @@ tr.data-row{-webkit-animation:fadeIn .3s ease both;animation:fadeIn .3s ease bot
 
 </div>
 
-<script>
-const GAS_URL = "https://script.google.com/macros/s/AKfycbzkAjGfoL7zPLtHutRVW53C1aNSiANHHgrF99LKHKLWpj8LPxwpF9s7dNahNAJW6XpYdg/exec";
-let allTasks = [];
+<!-- MODAL -->
+<div class="ov" id="ov" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="m-head"><div class="m-title" id="m-title"></div><button class="m-x" onclick="closeModal()">&times;</button></div>
+    <div class="m-body" id="m-body"></div>
+    <div class="m-foot">
+      <button class="btn-g" onclick="closeModal()">Cancel</button>
+      <button class="btn-p" id="m-save" onclick="saveModal()"><i class="ti ti-device-floppy"></i>Save</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
 
+<script>
+// ================= CONFIG =================
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzkAjGfoL7zPLtHutRVW53C1aNSiANHHgrF99LKHKLWpj8LPxwpF9s7dNahNAJW6XpYdg/exec";   // Rishika sheet → Deploy → Web app URL
+const PIN     = "";                              // same as CFG.PIN in Apps Script (leave "" if not used)
+// ==========================================
+
+let allTasks = [], statusFilter = 'all', modalMode = '', fuTask = null, fuChoice = '';
 const _now = new Date();
 const _days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const _months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 document.getElementById('today').textContent = _days[_now.getDay()] + ', ' + _now.getDate() + ' ' + _months[_now.getMonth()] + ' ' + _now.getFullYear();
 
+/* ---------- HELPERS ---------- */
 function findCols(headers) {
   const h = headers.map(v => String(v).toLowerCase().trim());
   return {
-    task:   h.findIndex(v => v === 'task' || (v.includes('task') && !v.includes('id') && !v.includes('complete'))),
-    status: h.findIndex(v => v.includes('status') || v.includes('complete') || v.includes('y-n') || v.includes('y/n')),
-    id:     h.findIndex(v => v.includes('id')),
-    date:    h.findIndex(v => v.includes('planned') && !v.includes('revised')),
-    revised: h.findIndex(v => v.includes('revised')),
-    link:    h.findIndex(v => v.includes('link'))
+    task:     h.findIndex(v => v === 'task' || (v.includes('task') && !v.includes('id') && !v.includes('complete'))),
+    status:   h.findIndex(v => v.includes('status') || v.includes('complete') || v.includes('y-n') || v.includes('y/n')),
+    id:       h.findIndex(v => v.includes('id')),
+    date:     h.findIndex(v => v.includes('planned') && !v.includes('revised')),
+    revised:  h.findIndex(v => v.includes('revised')),
+    feedback: h.findIndex(v => v.includes('feedback')),
+    link:     h.findIndex(v => v.includes('link')),
+    ts:       h.findIndex(v => v.includes('timestamp')),
   };
 }
-
-function safeDate(d) {
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
-}
-
-function safeDateTime(d) {
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  let h = d.getHours(), m = String(d.getMinutes()).padStart(2,'0');
-  const ampm = h >= 12 ? 'PM' : 'AM';
-  h = h % 12 || 12;
-  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ', ' + h + ':' + m + ' ' + ampm;
-}
-
-function formatDate(val) {
-  if (!val && val !== 0) return '—';
+function parseSheetDate(val) {
+  if (val === null || val === undefined) return null;
   const s = String(val).trim();
-  if (!s || s === '0') return '—';
-  if (/^\d{4,6}$/.test(s)) {
-    const d = new Date((Number(s) - 25569) * 86400 * 1000);
-    if (!isNaN(d)) return safeDate(d);
-  }
+  if (!s || s === '0') return null;
+  let m = s.match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})/);
+  if (m) { const d = new Date(+m[3], +m[2]-1, +m[1]); return isNaN(d) ? null : d; }
+  m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (m) { const d = new Date(+m[1], +m[2]-1, +m[3]); return isNaN(d) ? null : d; }
   const d = new Date(s);
-  if (!isNaN(d)) return safeDate(d);
-  return s;
+  return isNaN(d) ? null : new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
-
-function extractLink(val) {
-  if (!val) return '';
-  const hrefMatch = val.match(/href=["']([^"']+)["']/i);
-  if (hrefMatch) return hrefMatch[1];
-  if (val.startsWith('http')) return val;
-  return '';
+const midnight = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+function ymKey(d)  { return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'); }
+function ymdKey(d) { return ymKey(d) + '-' + String(d.getDate()).padStart(2,'0'); }
+function ymLabel(k){ const [y,m] = k.split('-'); return _months[+m-1] + ' ' + y; }
+function safeDate(d) { return d.getDate() + ' ' + _months[d.getMonth()] + ' ' + d.getFullYear(); }
+function safeDateTime(d) {
+  let h = d.getHours(); const m = String(d.getMinutes()).padStart(2,'0'), ap = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12; return safeDate(d) + ', ' + h + ':' + m + ' ' + ap;
 }
-
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function normalizeStatus(val) {
-  const v = String(val).toLowerCase().trim();
+  const v = String(val).toLowerCase().trim().split('\n').pop().trim();
   if (v === 'yes' || v === 'y') return 'yes';
   if (v === 'no'  || v === 'n') return 'no';
   return v || 'pending';
 }
-
 function badgeHTML(s) {
   if (s === 'yes') return `<span class="badge y"><span class="dot-indicator"></span>Done</span>`;
   if (s === 'no')  return `<span class="badge n"><span class="dot-indicator"></span>Not done</span>`;
-  return `<span class="badge p"><span class="dot-indicator"></span>${s || 'Pending'}</span>`;
+  return `<span class="badge p"><span class="dot-indicator"></span>Pending</span>`;
 }
-
 function animateCount(el, target) {
-  const dur = 800, start = performance.now();
-  const isPercent = String(target).includes('%');
-  const num = parseInt(target);
-  function step(now) {
+  const dur = 800, start = performance.now(), isPct = String(target).includes('%'), num = parseInt(target);
+  (function step(now) {
     const p = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(ease * num) + (isPercent ? '%' : '');
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * num) + (isPct ? '%' : '');
     if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+  })(start);
 }
-
-function renderRows(tasks) {
-  if (!tasks.length) return `<div class="empty-state"><div class="empty-icon"><i class="ti ti-mood-empty"></i></div><div class="empty-msg">No tasks match this filter</div></div>`;
-  return `<table>
-    <thead><tr>
-      <th style="width:60px">ID</th>
-      <th>Task</th>
-      <th style="width:120px">Planned Date</th>
-      <th style="width:130px">Revised Date</th>
-      <th style="width:120px">Status</th>
-    </tr></thead>
-    <tbody>
-      ${tasks.map((t,i) => `<tr class="data-row" style="animation-delay:${i*40}ms">
-        <td><span class="id-cell">${t.id || i+1}</span></td>
-        <td><span class="task-name">${t.task}</span></td>
-        <td><span class="date-cell">${t.date || '—'}</span></td>
-        <td><span class="date-cell">${t.revised || '—'}</span></td>
-        <td>${badgeHTML(t.status)}</td>
-      </tr>`).join('')}
-    </tbody>
-  </table>
-  <div class="footer">Updated: ${safeDateTime(new Date())}</div>`;
+function toast(msg, icon = 'ti-circle-check') {
+  const t = document.getElementById('toast');
+  t.innerHTML = `<i class="ti ${icon}"></i>${esc(msg)}`; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
 }
+// next working day (Sunday off)
+function addWorkDays(n) { const d = new Date(); let k = 0; while (k < n) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0) k++; } return ymdKey(d); }
 
-function applyFilter(filter, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const filtered = filter === 'all' ? allTasks : allTasks.filter(t => t.status === filter || (filter === 'no' && t.status !== 'yes'));
-  document.getElementById('content').innerHTML = renderRows(filtered);
-}
-
+/* ---------- DATA ---------- */
 function processData(json) {
-  const taskMap = {};
-  for (const sheetName of Object.keys(json)) {
-    const rows = json[sheetName];
+  const map = {};
+  for (const name of Object.keys(json)) {
+    const rows = json[name];
     if (!rows || rows.length < 2) continue;
-    const cols = findCols(rows[0]);
-    if (cols.task === -1) continue;
+    const c = findCols(rows[0]);
+    if (c.task === -1) continue;                                // skips Status tab
+    const isFollow = c.revised >= 0;                            // Step2 = follow-up log
     for (let i = 1; i < rows.length; i++) {
-      const row = rows[i];
-      const task = String(row[cols.task] || '').trim();
-      if (!task || task.toLowerCase() === 'task') continue;
-      const id = cols.id >= 0 ? String(row[cols.id] || '').trim() : String(i);
+      const r = rows[i];
+      const task = String(r[c.task] || '').trim();
+      if (!task) continue;
+      const id = c.id >= 0 ? String(r[c.id] || '').trim() : String(i);
       const key = id || task;
-      if (!taskMap[key]) taskMap[key] = { id, task, status:'', date:'', revised:'' };
-      const t = taskMap[key];
-      if (cols.status >= 0 && row[cols.status])  t.status  = normalizeStatus(row[cols.status]);
-      if (cols.date   >= 0 && row[cols.date])    t.date    = formatDate(row[cols.date]);
-      if (cols.revised>= 0 && row[cols.revised]) t.revised = formatDate(row[cols.revised]);
+      if (!map[key]) map[key] = { id, task, status:'', dateObj:null, revisedObj:null, feedback:'', link:'', fups:0, lastFu:'' };
+      const t = map[key];
+      if (!isFollow) t.task = task;
+      if (c.status >= 0 && r[c.status])     t.status = normalizeStatus(r[c.status]);
+      if (c.date >= 0 && r[c.date])         t.dateObj = parseSheetDate(r[c.date]) || t.dateObj;
+      if (c.revised >= 0 && r[c.revised])   t.revisedObj = parseSheetDate(r[c.revised]) || t.revisedObj;
+      if (c.feedback >= 0 && String(r[c.feedback]).trim()) t.feedback = String(r[c.feedback]).trim();
+      if (c.link >= 0 && /^https?:/.test(String(r[c.link]))) t.link = String(r[c.link]).trim();
+      if (isFollow) { t.fups++; if (c.ts >= 0) t.lastFu = r[c.ts]; }
     }
   }
-  const tasks = Object.values(taskMap);
-  allTasks = tasks;
-
-  const total = tasks.length;
-  const done  = tasks.filter(t => t.status === 'yes').length;
-  const pend  = total - done;
-  const pct   = total > 0 ? Math.round((done / total) * 100) : 0;
-
+  const today = midnight(new Date());
+  allTasks = Object.values(map).map(t => {
+    const due = t.revisedObj || t.dateObj;
+    const open = t.status !== 'yes';
+    const diff = due ? Math.round((today - due) / 864e5) : null;  // >0 overdue days
+    return { ...t, due, open, overdue: open && diff > 0 ? diff : 0, dueToday: open && diff === 0 };
+  });
+  buildMonthOptions(document.getElementById('month-sel').value);
+  ['fbar'].forEach(id => document.getElementById(id).style.display = 'flex');
   document.getElementById('cards').style.display = 'grid';
   document.getElementById('prog-section').style.display = 'block';
   document.getElementById('filters').style.display = 'flex';
-  document.getElementById('task-count').textContent = total;
-
-  setTimeout(() => {
-    animateCount(document.getElementById('c-total'), total);
-    animateCount(document.getElementById('c-done'),  done);
-    animateCount(document.getElementById('c-pend'),  pend);
-    animateCount(document.getElementById('c-pct'),   pct + '%');
-    animateCount(document.getElementById('prog-pct'), pct + '%');
-    document.getElementById('prog-fill').style.width = pct + '%';
-    document.getElementById('prog-done-lbl').textContent = done + ' completed';
-    document.getElementById('prog-total-lbl').textContent = total + ' total';
-  }, 100);
-
-  document.getElementById('content').innerHTML = renderRows(tasks);
+  refreshView();
 }
 
 async function loadData() {
   const btn = document.getElementById('refresh-btn');
   btn.classList.add('spinning');
-  document.getElementById('filters').style.display = 'none';
-  document.getElementById('content').innerHTML = `<div class="state"><div class="loader"><span></span><span></span><span></span></div></div>`;
-  try {
-    const res = await fetch(GAS_URL, { method: 'GET', mode: 'cors', redirect: 'follow', cache: 'no-cache' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const text = await res.text();
-    const json = JSON.parse(text);
-    processData(json);
-  } catch(e) {
-    document.getElementById('content').innerHTML = `<div class="err"><i class="ti ti-alert-triangle" style="flex-shrink:0;font-size:16px;margin-top:1px"></i><span>${e.message}. Ensure Apps Script is deployed with <strong>Anyone</strong> access.</span></div>`;
-  } finally {
-    btn.classList.remove('spinning');
+  if (!/^https?:\/\//.test(GAS_URL)) {
+    document.getElementById('content').innerHTML = `<div class="err"><i class="ti ti-alert-triangle"></i><span>Set <strong>GAS_URL</strong> in this file to Rishika's Apps Script web app URL.</span></div>`;
+    btn.classList.remove('spinning'); return;
   }
+  try {
+    const res = await fetch(GAS_URL, { method:'GET', redirect:'follow', cache:'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    processData(JSON.parse(await res.text()));
+  } catch (e) {
+    document.getElementById('content').innerHTML = `<div class="err"><i class="ti ti-alert-triangle" style="flex-shrink:0;font-size:16px;margin-top:1px"></i><span>${esc(e.message)}. Ensure Apps Script is deployed with <strong>Anyone</strong> access.</span></div>`;
+  } finally { btn.classList.remove('spinning'); }
+}
+
+async function post(payload) {
+  const res = await fetch(GAS_URL, { method:'POST', redirect:'follow', body: JSON.stringify({ ...payload, pin: PIN }) });
+  const j = JSON.parse(await res.text());
+  if (!j.ok) throw new Error(j.error || 'Save failed');
+  return j;
+}
+
+/* ---------- FILTER / RENDER ---------- */
+function buildMonthOptions(keep) {
+  const keys = [...new Set(allTasks.map(t => t.dateObj).filter(Boolean).map(ymKey))].sort().reverse();
+  const ms = document.getElementById('month-sel');
+  ms.innerHTML = `<option value="all">All Months</option>` + keys.map(k => `<option value="${k}">${ymLabel(k)}</option>`).join('');
+  ms.value = (keep && [...ms.options].some(o => o.value === keep)) ? keep : 'all';
+}
+function applyFilter(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active'); statusFilter = f; refreshView();
+}
+
+function refreshView() {
+  const month = document.getElementById('month-sel').value;
+  const q = document.getElementById('q').value.toLowerCase().trim();
+  const scoped = allTasks.filter(t => month === 'all' || (t.dateObj && ymKey(t.dateObj) === month))
+                         .filter(t => !q || (t.task + ' ' + t.id + ' ' + t.feedback).toLowerCase().includes(q));
+  const filtered = scoped.filter(t =>
+    statusFilter === 'yes' ? !t.open :
+    statusFilter === 'no'  ? t.open :
+    statusFilter === 'due' ? (t.overdue || t.dueToday) : true);
+
+  const total = scoped.length, done = scoped.filter(t => !t.open).length, pend = total - done;
+  const odue = allTasks.filter(t => t.overdue).length, tdue = allTasks.filter(t => t.dueToday).length;   // due = all months
+  const pct = total ? Math.round(done / total * 100) : 0;
+
+  document.getElementById('task-count').textContent = filtered.length;
+  animateCount(document.getElementById('c-total'), total);
+  animateCount(document.getElementById('c-done'), done);
+  animateCount(document.getElementById('c-pend'), pend);
+  animateCount(document.getElementById('c-due'), odue + tdue);
+  document.getElementById('c-due-tag').textContent = tdue + ' today · ' + odue + ' overdue';
+  animateCount(document.getElementById('prog-pct'), pct + '%');
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-done-lbl').textContent = done + ' completed';
+  document.getElementById('prog-total-lbl').textContent = total + ' total';
+  const ms = document.getElementById('month-sel');
+  document.getElementById('fsummary').textContent = 'Showing: ' + ms.options[ms.selectedIndex].text;
+
+  // open first (most overdue first), then done (latest first)
+  const sorted = filtered.slice().sort((a, b) =>
+    (a.open === b.open ? 0 : a.open ? -1 : 1) ||
+    (a.open ? ((a.due || 0) - (b.due || 0)) : ((b.due || 0) - (a.due || 0))) ||
+    (Number(a.id) || 0) - (Number(b.id) || 0));
+  document.getElementById('content').innerHTML = renderRows(sorted);
+}
+
+function renderRows(tasks) {
+  if (!tasks.length) return `<div class="empty-state"><div class="empty-icon"><i class="ti ti-mood-empty"></i></div><div class="empty-msg">${allTasks.length ? 'No tasks match this filter' : 'No tasks yet — click <b>Add Task</b> to start'}</div></div>`;
+  return `<table>
+    <thead><tr>
+      <th style="width:60px">ID</th>
+      <th>Task</th>
+      <th class="hide-sm" style="width:115px">Planned</th>
+      <th style="width:125px">Next Follow-up</th>
+      <th style="width:100px">Status</th>
+      <th style="width:110px"></th>
+    </tr></thead>
+    <tbody>
+      ${tasks.map((t, i) => {
+        const cls = t.overdue ? 'od' : t.dueToday ? 'td' : '';
+        const sub = [
+          t.overdue ? `<span class="tag od">${t.overdue}d overdue</span>` : '',
+          t.dueToday ? `<span class="tag td">due today</span>` : '',
+          t.fups ? `<span class="tag fu">${t.fups} follow-up${t.fups > 1 ? 's' : ''}</span>` : '',
+          t.feedback ? `<span><i class="ti ti-message"></i> ${esc(t.feedback)}</span>` : '',
+          t.link ? `<a href="${esc(t.link)}" target="_blank" rel="noopener" style="color:var(--accent)"><i class="ti ti-link"></i> link</a>` : ''
+        ].join('');
+        return `<tr class="data-row ${cls ? 'row-' + cls : ''}" style="animation-delay:${Math.min(i,25)*40}ms">
+          <td><span class="id-cell">${esc(t.id || i + 1)}</span></td>
+          <td><span class="task-name">${esc(t.task)}</span>${sub ? `<div class="sub">${sub}</div>` : ''}</td>
+          <td class="hide-sm"><span class="date-cell">${t.dateObj ? safeDate(t.dateObj) : '—'}</span></td>
+          <td>${t.open ? `<span class="date-cell ${cls}">${t.due ? safeDate(t.due) : '—'}</span>` : '<span class="done-txt">closed</span>'}</td>
+          <td>${badgeHTML(t.status)}</td>
+          <td>${t.open ? `<button class="fu-btn ${cls ? 'due' : ''}" onclick="openFollow('${esc(t.id)}')"><i class="ti ti-phone-call"></i>Follow-up</button>` : ''}</td>
+        </tr>`;
+      }).join('')}
+    </tbody>
+  </table>
+  <div class="footer">Updated: ${safeDateTime(new Date())}</div>`;
+}
+
+/* ---------- MODALS ---------- */
+function showModal(title, body) {
+  document.getElementById('m-title').innerHTML = title;
+  document.getElementById('m-body').innerHTML = body + `<div class="m-err" id="m-err"></div>`;
+  document.getElementById('m-save').disabled = false;
+  document.getElementById('ov').classList.add('show');
+}
+function closeModal() { document.getElementById('ov').classList.remove('show'); }
+function mErr(msg) { const e = document.getElementById('m-err'); e.textContent = msg; e.style.display = msg ? 'block' : 'none'; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function openAdd() {
+  modalMode = 'add';
+  showModal('<i class="ti ti-plus"></i>Add New Task', `
+    <div class="fld"><label class="flabel">Task <span class="req">*</span></label>
+      <textarea class="finput" id="a-task" placeholder="e.g. Plumber se quotation lena hai"></textarea></div>
+    <div class="fld"><label class="flabel">Planned Date <span class="req">*</span></label>
+      <input type="date" class="finput" id="a-date" value="${ymdKey(new Date())}">
+      <div class="quick">
+        <button type="button" class="qbtn" onclick="a_date.value='${ymdKey(new Date())}'">Today</button>
+        <button type="button" class="qbtn" onclick="a_date.value='${addWorkDays(1)}'">Tomorrow</button>
+        <button type="button" class="qbtn" onclick="a_date.value='${addWorkDays(3)}'">+3 days</button>
+        <button type="button" class="qbtn" onclick="a_date.value='${addWorkDays(6)}'">+1 week</button>
+      </div></div>
+    <div class="fld"><label class="flabel">Notes</label>
+      <input class="finput" id="a-fb" placeholder="Contact / details (optional)"></div>
+    <div class="fld"><label class="flabel">Link</label>
+      <input class="finput" id="a-link" placeholder="https://… (optional)"></div>`);
+  window.a_date = document.getElementById('a-date');
+  setTimeout(() => document.getElementById('a-task').focus(), 50);
+}
+
+function openFollow(id) {
+  fuTask = allTasks.find(t => String(t.id) === String(id)); if (!fuTask) return;
+  modalMode = 'follow'; fuChoice = '';
+  showModal(`<i class="ti ti-phone-call"></i>Follow-up · Task #${esc(fuTask.id)}`, `
+    <div class="task-box">${esc(fuTask.task)}
+      <div class="meta">Planned: ${fuTask.dateObj ? safeDate(fuTask.dateObj) : '—'}${fuTask.revisedObj ? ' · Revised: ' + safeDate(fuTask.revisedObj) : ''} · ${fuTask.fups} follow-up(s)${fuTask.feedback ? '<br>Last: ' + esc(fuTask.feedback) : ''}</div></div>
+    <div class="fld"><label class="flabel">Is the task done? <span class="req">*</span></label>
+      <div class="choice">
+        <div class="opt yes" id="o-yes" onclick="pick('Yes')"><i class="ti ti-circle-check"></i>Yes, Done</div>
+        <div class="opt no"  id="o-no"  onclick="pick('No')"><i class="ti ti-clock-pause"></i>Not Done Yet</div>
+      </div></div>
+    <div class="fld" id="rev-wrap" style="display:none"><label class="flabel">Next Follow-up Date <span class="req">*</span></label>
+      <input type="date" class="finput" id="f-rev" value="${addWorkDays(1)}" min="${ymdKey(new Date())}">
+      <div class="quick">
+        <button type="button" class="qbtn" onclick="f_rev.value='${addWorkDays(1)}'">Tomorrow</button>
+        <button type="button" class="qbtn" onclick="f_rev.value='${addWorkDays(2)}'">+2 days</button>
+        <button type="button" class="qbtn" onclick="f_rev.value='${addWorkDays(3)}'">+3 days</button>
+        <button type="button" class="qbtn" onclick="f_rev.value='${addWorkDays(6)}'">+1 week</button>
+      </div></div>
+    <div class="fld"><label class="flabel">Update / Feedback <span class="req" id="fb-req" style="display:none">*</span></label>
+      <textarea class="finput" id="f-fb" placeholder="Kya baat hui? Kab tak hoga?"></textarea></div>`);
+  window.f_rev = document.getElementById('f-rev');
+}
+function pick(v) {
+  fuChoice = v;
+  document.getElementById('o-yes').classList.toggle('on', v === 'Yes');
+  document.getElementById('o-no').classList.toggle('on', v === 'No');
+  document.getElementById('rev-wrap').style.display = v === 'No' ? 'flex' : 'none';
+  document.getElementById('fb-req').style.display = v === 'No' ? 'inline' : 'none';
+  mErr('');
+}
+
+async function saveModal() {
+  let payload, okMsg;
+  if (modalMode === 'add') {
+    const task = document.getElementById('a-task').value.trim(), planned = document.getElementById('a-date').value;
+    if (!task) return mErr('Please enter the task');
+    if (!planned) return mErr('Please select planned date');
+    payload = { action:'add', task, planned, feedback: document.getElementById('a-fb').value, link: document.getElementById('a-link').value };
+    okMsg = 'Task added';
+  } else {
+    if (!fuChoice) return mErr('Select Done or Not Done');
+    const revised = document.getElementById('f-rev').value, feedback = document.getElementById('f-fb').value.trim();
+    if (fuChoice === 'No' && !revised) return mErr('Select next follow-up date');
+    if (fuChoice === 'No' && !feedback) return mErr('Write a short update for the follow-up');
+    payload = { action:'followup', id: fuTask.id, status: fuChoice, revised: fuChoice === 'No' ? revised : '', feedback };
+    okMsg = fuChoice === 'Yes' ? 'Task #' + fuTask.id + ' marked Done 🎉' : 'Follow-up saved · next on ' + safeDate(parseSheetDate(revised));
+  }
+  const btn = document.getElementById('m-save');
+  btn.disabled = true; btn.innerHTML = '<i class="ti ti-loader-2"></i>Saving…';
+  try {
+    const r = await post(payload);
+    closeModal();
+    toast(modalMode === 'add' ? okMsg + ' · #' + r.id : okMsg);
+    loadData();
+  } catch (e) { mErr(e.message); }
+  finally { btn.disabled = false; btn.innerHTML = '<i class="ti ti-device-floppy"></i>Save'; }
 }
 
 loadData();
